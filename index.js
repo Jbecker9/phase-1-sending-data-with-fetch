@@ -34,8 +34,12 @@ function submitData(name, email){
 
     fetch("http://localhost:3000/users", objConfig)
     .then((resp) => resp.json())
-    .then(obj => appendId(obj))
-    .catch(error => document.body.innerHTML = error.message)
+    .then(obj => {
+        console.log(obj)
+        appendId(obj)})
+    .catch(error => {
+        console.log(error.message)
+        document.body.innerHTML = error.message})
     // .catch(obj => console.log("HERE;;; " + obj.message))
 }
 
