@@ -35,6 +35,5 @@ function submitData(){
     fetch("http://localhost:3000/users", objConfig)
     .then((resp) => resp.json())
     .then(obj => console.log(obj))
-    .then({
-    })
+    .then(
 }
