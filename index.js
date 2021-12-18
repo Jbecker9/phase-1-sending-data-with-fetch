@@ -32,5 +32,5 @@ function submitData(){
         email: "steve@steve.com"
     })};
 
-    fetch("http://localhost:3000/users", objConfig).then((resp) => resp.json()).then((obj) => submitData(obj))
+    fetch("http://localhost:3000/users", objConfig).then((resp) => resp.json()).then(
 }
