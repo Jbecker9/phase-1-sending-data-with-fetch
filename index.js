@@ -20,23 +20,23 @@
     //     console.log(object);
     // });
 
-function submitData(){
+function submitData(name, email){
     const objConfig = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
+            "Accept": "application/json",
         },
     body: JSON.stringify({
-        name: "Steve",
-        email: "steve@steve.com"
+        name,
+        email
     })};
 
     fetch("http://localhost:3000/users", objConfig)
     .then((resp) => resp.json())
     .then(obj => appendId(obj))
-    .catch(obj => console.log(obj))
-    // .catch((obj) => document.body.innerHTML = obj['message'])
+    .catch(error => document.body.innerHTML = error.message)
+    // .catch(obj => console.log("HERE;;; " + obj.message))
 }
 
 function appendId(obj){
